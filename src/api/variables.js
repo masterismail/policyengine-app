@@ -242,11 +242,10 @@ export function getPlotlyAxisFormat(unit, values, precisionOverride) {
     if (typeof precisionOverride === "number") {
       return precisionOverride;
     }
-    const r = range();
-    const s = unit === "/1" ? 100 : 1;
-    const d = (r[1] - r[0]) * s;
-    return d > 10 ? 0 : d === 0 ? 1 : 1 - Math.round(Math.log10(d));
+    // Replace with your desired number of decimal places
+    return 2;
   };
+
 
   const isCurrency = Object.keys(currencyMap).includes(unit);
   const isPercent = unit === "/1";
